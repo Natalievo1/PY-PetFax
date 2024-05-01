@@ -1,0 +1,19 @@
+<!-- templates/new_fact.html -->
+{% extends 'base.html' %}
+
+{% block title %}Submit a New Fact{% endblock %}
+
+{% block content %}
+    <h2>Submit a New Fun Fact</h2>
+    <form action="{{ url_for('new_fact') }}" method="post">
+        <div>
+            <label for="submitter">Your Name:</label>
+            <input type="text" id="submitter" name="submitter">
+        </div>
+        <div>
+            <label for="fact">Fun Fact:</label>
+            <textarea id="fact" name="fact"></textarea>
+        </div>
+        <button type="submit">Submit Fact</button>
+    </form>
+{% endblock %}

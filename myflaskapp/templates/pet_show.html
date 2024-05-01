@@ -1,0 +1,10 @@
+<!-- templates/pet_show.html -->
+{% extends 'base.html' %}
+
+{% block title %}{{ pet.name }}{% endblock %}
+
+{% block content %}
+    <h2>{{ pet.name }}</h2>
+    <img src="{{ url_for('static', filename=pet.image_url) }}" alt="{{ pet.name }}">
+    <p><strong>Fun Fact:</strong> {{ pet.fun_fact }}</p>
+{% endblock %}

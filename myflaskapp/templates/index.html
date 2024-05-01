@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Available Pets</h2>
+<ul>
+    {% for pet in pets %}
+    <li>
+        <a href="{{ url_for('pet_show', index=loop.index0) }}">
+            <img src="{{ url_for('static', filename=pet.image_url) }}" alt="{{ pet.name }}" style="height: 100px;">
+            {{ pet.name }}
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
